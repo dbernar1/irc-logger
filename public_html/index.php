@@ -22,7 +22,7 @@ foreach ( glob( LOG_DIR . '*.db' ) as $db ) {
 		continue;
 	if ( (time() - filemtime($db)) > 86400 )
 		continue;
-	$file = str_replace('.sqlite.db', '', basename($db));
+	$file = basename( $db, '.sqlite.db' );
 	$name = ucwords(str_replace('-', ' ', $file));
 	$name = str_ireplace('press', 'Press', $name);
 	$name = str_ireplace('bbpress', 'BBPress', $name);

@@ -66,7 +66,7 @@
 		foreach ( glob( LOG_DIR . '*.db' ) as $_db ) {
 			if ( time() - filemtime($_db) > ( 86400 * 7 ) ) 
 				continue;
-			$file = str_replace('.sqlite.db', '', basename($_db));
+			$file = basename( $_db, '.sqlite.db' );
 			echo "<option ";
 			if ( $channel == $file )
 				echo " selected ";
